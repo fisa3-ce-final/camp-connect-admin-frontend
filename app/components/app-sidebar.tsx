@@ -3,9 +3,12 @@ import {
     Home,
     Inbox,
     LayoutDashboard,
+    Package,
     PartyPopper,
     Search,
     Settings,
+    ShoppingCart,
+    Ticket,
 } from "lucide-react";
 
 import {
@@ -30,17 +33,17 @@ const items = [
     {
         title: "물품 관리",
         url: "/items",
-        icon: PartyPopper,
+        icon: Package,
     },
     {
         title: "대여 관리",
         url: "/rentals",
-        icon: PartyPopper,
+        icon: ShoppingCart,
     },
     {
         title: "쿠폰 관리",
         url: "/coupons",
-        icon: PartyPopper,
+        icon: Ticket,
     },
 ];
 
