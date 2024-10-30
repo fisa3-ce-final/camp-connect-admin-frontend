@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
 import { GlobalNav } from "./components/global-nav";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "./components/app-sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +21,17 @@ export default function RootLayout({
     return (
         <html lang="ko" suppressHydrationWarning={true}>
             <body className={inter.className}>
-                <div className="flex flex-col md:flex-row">
-                    <GlobalNav />
-                    {children}
-                </div>
+                {/* <div className="flex flex-col md:flex-row"> */}
+                {/* <GlobalNav /> */}
+                <SidebarProvider>
+                    <AppSidebar />
+                    <main className="w-full">
+                        <SidebarTrigger />
+                        {children}
+                    </main>
+                </SidebarProvider>
+
+                {/* </div> */}
                 <Toaster />
             </body>
         </html>
